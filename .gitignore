@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+
+# Local tooling
+node_modules/
+
+# WP / OS noise
+wp-content/uploads/
+
+# Env
+.env
+
+# IDE
+.idea/
+.vscode/

@@ -1,0 +1,5 @@
+/* RTL overrides for Aramazco */
+
+body {
+  direction: rtl;
+}
