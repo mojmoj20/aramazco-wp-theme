@@ -5,17 +5,15 @@
 /* Product grid */
 .woocommerce ul.products {
 	display: grid;
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 14px;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 18px;
+	align-items: stretch;
 }
 
 @media (max-width: 1100px) {
-	.woocommerce ul.products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (max-width: 820px) {
 	.woocommerce ul.products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 520px) {
+@media (max-width: 620px) {
 	.woocommerce ul.products { grid-template-columns: 1fr; }
 }
 
@@ -24,8 +22,11 @@
 	border: 1px solid var(--aramazco-border);
 	background: var(--aramazco-surface);
 	box-shadow: var(--aramazco-shadow);
-	padding: 14px;
+	padding: 16px;
 	transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .woocommerce ul.products li.product:hover {
@@ -39,22 +40,29 @@
 	color: var(--aramazco-text);
 }
 
+/* Make product images fill the card width (bigger visual) */
 .woocommerce ul.products li.product a img {
-	border-radius: 12px;
+	display: block;
+	width: 100% !important;
+	height: auto !important;
+	max-width: 100% !important;
+	border-radius: 14px;
 	background: rgba(232, 238, 252, 0.03);
+	padding: 10px; /* gives consistent framing; remove later if your photos are tightly cropped */
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
-	font-size: 16px;
-	font-weight: 800;
+	font-size: 17px;
+	font-weight: 900;
 	letter-spacing: 0.2px;
-	margin-top: 10px;
-	color: rgba(232, 238, 252, 0.92);
+	margin: 4px 0 0;
+	color: rgba(232, 238, 252, 0.94);
 }
 
 .woocommerce ul.products li.product .price {
-	color: rgba(232, 238, 252, 0.82);
-	font-weight: 800;
+	color: rgba(232, 238, 252, 0.86);
+	font-weight: 900;
+	margin: 0;
 }
 
 /* Buttons */
@@ -66,7 +74,7 @@
 	border: 1px solid rgba(47,125,246,0.55);
 	background: linear-gradient(135deg, rgba(47,125,246,0.95), rgba(0,163,255,0.70));
 	color: #fff;
-	font-weight: 800;
+	font-weight: 900;
 	padding: 12px 16px;
 }
 
