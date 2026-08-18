@@ -16,15 +16,15 @@ add_action('wp_enqueue_scripts', function (): void {
 		$ver
 	);
 
-	// WooCommerce-specific styling (kept separate).
-	if (class_exists('WooCommerce')) {
-		wp_enqueue_style(
-			'aramazco-woocommerce',
-			ARAMAZCO_THEME_URI . '/woocommerce.css',
-			['aramazco-main'],
-			$ver
-		);
-	}
+	// WooCommerce-specific styling (kept separate). We load it unconditionally
+	// so styling is present even if WooCommerce is installed/activated later or
+	// a caching/minification plugin changes load order.
+	wp_enqueue_style(
+		'aramazco-woocommerce',
+		ARAMAZCO_THEME_URI . '/woocommerce.css',
+		['aramazco-main'],
+		$ver
+	);
 
 	// RTL support (only loaded when site language is RTL).
 	wp_enqueue_style(
