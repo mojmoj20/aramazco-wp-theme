@@ -251,7 +251,132 @@ a { color: inherit; }
 .aramazco-list { margin: 0; padding-left: 18px; color: rgba(232, 238, 252, 0.82); }
 .aramazco-list li { margin: 8px 0; }
 
-/* Responsive */
+/* ------------------------------
+   WooCommerce (My Account / Login)
+--------------------------------- */
+
+.aramazco-has-woocommerce .woocommerce {
+  width: min(1120px, calc(100% - 32px));
+  margin: 38px auto 64px;
+}
+
+.aramazco-has-woocommerce .woocommerce a {
+  color: rgba(232, 238, 252, 0.92);
+}
+
+.aramazco-has-woocommerce .woocommerce a:hover {
+  color: #ffffff;
+}
+
+.aramazco-has-woocommerce .woocommerce .woocommerce-notices-wrapper,
+.aramazco-has-woocommerce .woocommerce .woocommerce-message,
+.aramazco-has-woocommerce .woocommerce .woocommerce-info,
+.aramazco-has-woocommerce .woocommerce .woocommerce-error {
+  border-radius: var(--aramazco-radius);
+  border: 1px solid var(--aramazco-border);
+  background: var(--aramazco-surface);
+  box-shadow: var(--aramazco-shadow);
+}
+
+.aramazco-has-woocommerce .woocommerce form.login,
+.aramazco-has-woocommerce .woocommerce form.register,
+.aramazco-has-woocommerce .woocommerce form.lost_reset_password,
+.aramazco-has-woocommerce .woocommerce-MyAccount-content,
+.aramazco-has-woocommerce .woocommerce-MyAccount-navigation {
+  border-radius: var(--aramazco-radius);
+  border: 1px solid var(--aramazco-border);
+  background: var(--aramazco-surface);
+  box-shadow: var(--aramazco-shadow);
+}
+
+.aramazco-has-woocommerce .woocommerce form.login,
+.aramazco-has-woocommerce .woocommerce form.register,
+.aramazco-has-woocommerce .woocommerce form.lost_reset_password {
+  padding: 18px;
+}
+
+.aramazco-has-woocommerce .woocommerce label {
+  color: rgba(232, 238, 252, 0.84);
+  font-weight: 700;
+}
+
+.aramazco-has-woocommerce .woocommerce input[type="text"],
+.aramazco-has-woocommerce .woocommerce input[type="email"],
+.aramazco-has-woocommerce .woocommerce input[type="password"],
+.aramazco-has-woocommerce .woocommerce input[type="tel"],
+.aramazco-has-woocommerce .woocommerce select,
+.aramazco-has-woocommerce .woocommerce textarea {
+  border-radius: 12px;
+  border: 1px solid var(--aramazco-border);
+  background: rgba(232, 238, 252, 0.04);
+  color: var(--aramazco-text);
+  padding: 12px 12px;
+}
+
+.aramazco-has-woocommerce .woocommerce input:focus,
+.aramazco-has-woocommerce .woocommerce select:focus,
+.aramazco-has-woocommerce .woocommerce textarea:focus {
+  outline: none;
+  border-color: rgba(47,125,246,0.65);
+  box-shadow: 0 0 0 3px rgba(47,125,246,0.20);
+}
+
+.aramazco-has-woocommerce .woocommerce button.button,
+.aramazco-has-woocommerce .woocommerce a.button,
+.aramazco-has-woocommerce .woocommerce input.button,
+.aramazco-has-woocommerce .woocommerce #respond input#submit {
+  border-radius: 12px;
+  border: 1px solid rgba(47,125,246,0.55);
+  background: linear-gradient(135deg, rgba(47,125,246,0.95), rgba(0,163,255,0.70));
+  color: #fff;
+  font-weight: 800;
+  padding: 12px 16px;
+}
+
+.aramazco-has-woocommerce .woocommerce button.button:hover,
+.aramazco-has-woocommerce .woocommerce a.button:hover,
+.aramazco-has-woocommerce .woocommerce input.button:hover,
+.aramazco-has-woocommerce .woocommerce #respond input#submit:hover {
+  background: linear-gradient(135deg, rgba(47,125,246,1), rgba(0,163,255,0.86));
+  color: #fff;
+}
+
+.aramazco-has-woocommerce .woocommerce-MyAccount-navigation {
+  padding: 12px;
+}
+
+.aramazco-has-woocommerce .woocommerce-MyAccount-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.aramazco-has-woocommerce .woocommerce-MyAccount-navigation li {
+  margin: 6px 0;
+}
+
+.aramazco-has-woocommerce .woocommerce-MyAccount-navigation a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.aramazco-has-woocommerce .woocommerce-MyAccount-navigation a:hover {
+  border-color: var(--aramazco-border);
+  background: rgba(232, 238, 252, 0.05);
+}
+
+.aramazco-has-woocommerce .woocommerce-MyAccount-navigation li.is-active a {
+  border-color: rgba(47,125,246,0.55);
+  background: rgba(47,125,246,0.18);
+}
+
+.aramazco-has-woocommerce .woocommerce-MyAccount-content {
+  padding: 18px;
+}
+
 @media (max-width: 920px) {
   .aramazco-hero__grid { grid-template-columns: 1fr; }
   .aramazco-section__head { flex-direction: column; align-items: flex-start; }
