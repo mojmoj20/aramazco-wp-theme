@@ -18,8 +18,8 @@ declare(strict_types=1);
 		<div class="aramazco-header__inner">
 			<a class="aramazco-brand" href="<?php echo esc_url(home_url('/')); ?>">
 				<?php
-				if (function_exists('the_custom_logo') && has_custom_logo()) {
-					the_custom_logo();
+				if (function_exists('aramazco_render_brand_logo')) {
+					aramazco_render_brand_logo();
 				} else {
 					echo '<span class="aramazco-brand__name">' . esc_html(get_bloginfo('name')) . '</span>';
 				}

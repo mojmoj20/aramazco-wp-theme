@@ -33,3 +33,21 @@ add_action('after_setup_theme', function (): void {
 		'script',
 	]);
 });
+
+/**
+ * Render brand mark in header. Prefers WP custom logo; falls back to bundled logo.
+ */
+function aramazco_render_brand_logo(): void
+{
+	if (function_exists('the_custom_logo') && has_custom_logo()) {
+		the_custom_logo();
+		return;
+	}
+
+	$src = get_template_directory_uri() . '/assets/brand/aramazco-logo.png';
+	printf(
+		'<img class="aramazco-logo" src="%s" alt="%s" loading="eager" decoding="async" />',
+		esc_url($src),
+		esc_attr(get_bloginfo('name'))
+	);
+}
