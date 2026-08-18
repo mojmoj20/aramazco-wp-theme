@@ -123,6 +123,17 @@ a { color: inherit; }
   margin-bottom: 18px;
 }
 
+/* Pages */
+.aramazco-page {
+  padding: 38px 0 64px;
+}
+
+.aramazco-page__content {
+  color: rgba(232, 238, 252, 0.88);
+}
+
+.aramazco-page__content a { text-decoration: underline; text-underline-offset: 3px; }
+
 /* HERO */
 .aramazco-hero { padding: 52px 0 22px; }
 
