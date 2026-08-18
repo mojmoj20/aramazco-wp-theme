@@ -1,15 +1,38 @@
 /*
-  WooCommerce styling for Aramazco (loaded automatically by WooCommerce if present)
+  WooCommerce styling for Aramazco
 */
 
-/* Product grid (responsive, wide cards) */
+/*
+  SHOP GRID
+  - Keep cards wide enough so they don't look like "towers"
+  - Center the grid and keep it within a readable max width
+*/
 .woocommerce ul.products {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-	gap: 18px;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 22px;
 	align-items: stretch;
-	width: min(1120px, calc(100% - 32px));
+	width: min(1100px, calc(100% - 32px));
 	margin: 34px auto 64px;
+	padding: 0;
+	list-style: none;
+}
+
+/* Force WooCommerce columns-based layout off */
+.woocommerce ul.products.columns-1,
+.woocommerce ul.products.columns-2,
+.woocommerce ul.products.columns-3,
+.woocommerce ul.products.columns-4,
+.woocommerce ul.products.columns-5,
+.woocommerce ul.products.columns-6 {
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+@media (max-width: 720px) {
+	.woocommerce ul.products {
+		grid-template-columns: 1fr;
+		width: min(560px, calc(100% - 24px));
+	}
 }
 
 .woocommerce ul.products li.product {
@@ -35,7 +58,7 @@
 	color: var(--aramazco-text);
 }
 
-/* Make product images visually dominant */
+/* Make product images visually dominant but NOT stretched */
 .woocommerce ul.products li.product a.woocommerce-LoopProduct-link,
 .woocommerce ul.products li.product a.woocommerce-loop-product__link {
 	display: flex;
@@ -47,12 +70,13 @@
 .woocommerce ul.products li.product a img {
 	display: block;
 	width: 100% !important;
+	height: auto !important;
 	max-width: 100% !important;
 	border-radius: 14px;
 	background: rgba(232, 238, 252, 0.04);
 	padding: 0;
 	aspect-ratio: 1 / 1;
-	object-fit: cover; /* crop to fill square so product appears larger */
+	object-fit: cover;
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
@@ -100,7 +124,7 @@
 
 /* Single product */
 .woocommerce div.product {
-	width: min(1120px, calc(100% - 32px));
+	width: min(1100px, calc(100% - 32px));
 	margin: 38px auto 64px;
 }
 
