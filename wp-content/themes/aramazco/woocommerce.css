@@ -26,7 +26,8 @@
 	transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 12px;
+	min-height: 420px;
 }
 
 .woocommerce ul.products li.product:hover {
@@ -40,7 +41,15 @@
 	color: var(--aramazco-text);
 }
 
-/* Make product images fill the card width (bigger visual) */
+/* Make product images visually dominant */
+.woocommerce ul.products li.product a.woocommerce-LoopProduct-link,
+.woocommerce ul.products li.product a.woocommerce-loop-product__link {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	flex: 1;
+}
+
 .woocommerce ul.products li.product a img {
 	display: block;
 	width: 100% !important;
@@ -48,14 +57,20 @@
 	max-width: 100% !important;
 	border-radius: 14px;
 	background: rgba(232, 238, 252, 0.03);
-	padding: 10px; /* gives consistent framing; remove later if your photos are tightly cropped */
+	padding: 0; /* remove framing so images appear larger */
+}
+
+/* Keep images a consistent height, without distortion */
+.woocommerce ul.products li.product a img {
+	aspect-ratio: 1 / 1;
+	object-fit: contain;
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
-	font-size: 17px;
+	font-size: 18px;
 	font-weight: 900;
 	letter-spacing: 0.2px;
-	margin: 4px 0 0;
+	margin: 0;
 	color: rgba(232, 238, 252, 0.94);
 }
 
@@ -63,6 +78,14 @@
 	color: rgba(232, 238, 252, 0.86);
 	font-weight: 900;
 	margin: 0;
+}
+
+/* Place add-to-cart at bottom for consistent cards */
+.woocommerce ul.products li.product .button,
+.woocommerce ul.products li.product a.button {
+	margin-top: auto;
+	width: 100%;
+	text-align: center;
 }
 
 /* Buttons */
