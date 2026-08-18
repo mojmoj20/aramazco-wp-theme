@@ -2,19 +2,14 @@
   WooCommerce styling for Aramazco (loaded automatically by WooCommerce if present)
 */
 
-/* Product grid */
+/* Product grid (responsive, wide cards) */
 .woocommerce ul.products {
 	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 	gap: 18px;
 	align-items: stretch;
-}
-
-@media (max-width: 1100px) {
-	.woocommerce ul.products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 620px) {
-	.woocommerce ul.products { grid-template-columns: 1fr; }
+	width: min(1120px, calc(100% - 32px));
+	margin: 34px auto 64px;
 }
 
 .woocommerce ul.products li.product {
@@ -27,7 +22,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: 12px;
-	min-height: 420px;
 }
 
 .woocommerce ul.products li.product:hover {
@@ -53,17 +47,12 @@
 .woocommerce ul.products li.product a img {
 	display: block;
 	width: 100% !important;
-	height: auto !important;
 	max-width: 100% !important;
 	border-radius: 14px;
-	background: rgba(232, 238, 252, 0.03);
-	padding: 0; /* remove framing so images appear larger */
-}
-
-/* Keep images a consistent height, without distortion */
-.woocommerce ul.products li.product a img {
+	background: rgba(232, 238, 252, 0.04);
+	padding: 0;
 	aspect-ratio: 1 / 1;
-	object-fit: contain;
+	object-fit: cover; /* crop to fill square so product appears larger */
 }
 
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
